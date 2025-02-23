@@ -1,0 +1,333 @@
+        /* Variáveis CSS */
+        :root {
+            --red-aged: #8B0000;
+            --black-matte: #1a1a1a;
+            --white-pure: #ffffff;
+            --dark-bg: var(--black-matte);
+            --dark-text: var(--white-pure);
+            --dark-card: #2a2a2a;
+            --transition-default: all 0.3s ease;
+        }
+
+        /* Estilos Base */
+        body {
+            background-color: var(--white-pure);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Modos de Acessibilidade */
+        [data-theme="dark"] {
+            background-color: var(--dark-bg) !important;
+            color: var(--dark-text) !important;
+        }
+
+        [data-contrast="high"] {
+            --red-aged: #ff0000;
+            --black-matte: #000000;
+            --white-pure: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--black-matte);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-default);
+        }
+
+        .navbar-brand {
+            color: var(--white-pure);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--white-pure);
+            margin: 0 1rem;
+            transition: var(--transition-default);
+        }
+
+        .nav-link:hover {
+            color: var(--red-aged);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(IMG/image.jpg);
+            background-size: cover; /* Faz a imagem cobrir toda a tela sem distorcer */
+            
+            
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(30%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white-pure);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: float 6s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Cartas de Baralho */
+        .cards-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, var(--black-matte), var(--red-aged));
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .playing-card {
+            position: relative;
+            width: 150px;
+            height: 210px;
+            margin: auto;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .playing-card:hover {
+            transform: rotateY(15deg);
+        }
+
+        .playing-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card-back {
+            background: var(--red-aged);
+            background-image: 
+                linear-gradient(45deg, var(--red-aged) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--red-aged) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--red-aged) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--red-aged) 75%);
+            background-size: 20px 20px;
+            border: 8px solid var(--white-pure);
+        }
+
+        .card-front {
+            background: var(--white-pure);
+            transform: rotateY(180deg);
+            border: 8px solid var(--red-aged);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .card-hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white-pure);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .playing-card:hover .card-hover-text {
+            opacity: 1;
+        }
+
+        /* Seção do Álbum */
+        .album-section {
+            padding: 4rem 2rem;
+            background-color: var(--black-matte);
+            color: var(--white-pure);
+        }
+
+        .track-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .track-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            transition: var(--transition-default);
+        }
+
+        .track-item:hover {
+            transform: translateX(10px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Seção de Vídeos */
+        .videos-section {
+            padding: 4rem 2rem;
+            background-color: var(--white-pure);
+            background-size: cover;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Loja */
+        .shop-section {
+            padding: 4rem 2rem;
+            background-color: var(--black-matte);
+            color: var(--white-pure);
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: var(--transition-default);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--black-matte);
+            color: var(--white-pure);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .social-link {
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            transition: var(--transition-default);
+        }
+
+        .social-link:hover {
+            color: var(--red-aged);
+            transform: scale(1.2);
+        }
+
+        /* Controles de Acessibilidade */
+        .accessibility-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .accessibility-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: var(--black-matte);
+            color: var(--white-pure);
+            transition: var(--transition-default);
+        }
+
+        .accessibility-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background: var(--white-pure);
+            border-radius: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .accessibility-controls {
+                top: auto;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+        }
+    

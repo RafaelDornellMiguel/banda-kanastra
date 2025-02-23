@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site oficial da banda Kanastra - Álbum Rainha Vermelha">
+    <title>Kanastra - Rainha Vermelha</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Controles de Acessibilidade -->
+    <div class="accessibility-controls">
+        <button class="accessibility-btn" onclick="toggleTheme()">🌓 Modo</button>
+        <button class="accessibility-btn" onclick="toggleContrast()">🔍 Contraste</button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">KAN♦️STRA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#album">Álbum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Vídeos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shop">Loja</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">KANASTRA</h1>
+        </div>
+    </section>
+
+    <!-- Seção de Cartas -->
+    <section class="cards-section">
+        <div class="cards-container">
+            <div class="playing-card" onclick="flipCard(this, 'music')">
+                <div class="card-face card-back">
+                    <span class="card-hover-text">Clique para Descobrir</span>
+                </div>
+                <div class="card-face card-front">♠️</div>
+            </div>
+            <div class="playing-card" onclick="flipCard(this, 'shows')">
+                <div class="card-face card-back">
+                    <span class="card-hover-text">Clique para Descobrir</span>
+                </div>
+                <div class="card-face card-front">♥️</div>
+            </div>
+            <div class="playing-card" onclick="flipCard(this, 'shirts')">
+                <div class="card-face card-back">
+                    <span class="card-hover-text">Clique para Descobrir</span>
+                </div>
+                <div class="card-face card-front">♣️</div>
+            </div>
+            <div class="playing-card" onclick="flipCard(this, 'mugs')">
+                <div class="card-face card-back">
+                    <span class="card-hover-text">Clique para Descobrir</span>
+                </div>
+                <div class="card-face card-front">♦️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Álbum -->
+    <section id="album" class="album-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Rainha Vermelha</h2>
+            <div class="track-list">
+                <div class="track-item">
+                    <h3>1. Truco</h3>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7LNG3vn0xJgqXud1f0VIxJ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <!-- Mais faixas seriam adicionadas aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Vídeos -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Vídeos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LTqmjssAgBs?si=uMMLPj_iSTFtv-MZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3>Truco</h3>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="video-container">
+                        <img src="IMG/capa do álbum .jpg" alt="Rainha Vermelha Music Video" class="img-fluid">
+                    </div>
+                    <h3>Rainha Vermelha (Em breve)</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Loja -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Loja Oficial</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="https://a-static.mlcdn.com.br/800x560/camiseta-camisa-jogo-truco-truqueiro-nipe-dogs/dgcustom/e57eb172bb0d11eebab94201ac185040/ef3876913dfe85f4c686c790077cde31.jpeg" alt="Camiseta Kanastra" class="img-fluid mb-3">
+                        <h3>Camiseta Truco</h3>
+                        <p class="text-muted">R$ 89,90</p>
+                        <button class="btn btn-outline-light w-100">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="https://m.media-amazon.com/images/I/51IT3ZbhyvL._AC_UF894,1000_QL80_.jpg" alt="Caneca Kanastra" class="img-fluid mb-3">
+                        <h3>Caneca Rainha Vermelha</h3>
+                        <p class="text-muted">R$ 49,90</p>
+                        <button class="btn btn-outline-light w-100">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="IMG/capa do álbum .jpg" alt="Poster Kanastra" class="img-fluid mb-3">
+                        <h3>Poster Autografado</h3>
+                        <p class="text-muted">R$ 39,90</p>
+                        <button class="btn btn-outline-light w-100">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="YouTube">📹</a>
+                <a href="#" class="social-link" aria-label="Spotify">🎧</a>
+                <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Kanastra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para conteúdo das cartas -->
+    <div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Surpresa!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo dinâmico será inserido aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="scripit.js"></script>
+</body>
+</html>
